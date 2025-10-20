@@ -73,3 +73,12 @@ npm run dev
 
 ## Desenvolvido por Maria Beatriz Carneiro
 **Desafio Básico** - Ver e adicionar nomes com Next.js, Express e MongoDB.
+
+
+
+
+
+
+
+className=" bg-white bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-50"
+className="bg-white rounded-lg p-6 w-full max-w-md mx-4 max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-200"

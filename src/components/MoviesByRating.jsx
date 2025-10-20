@@ -24,7 +24,9 @@ export default function VerFilmesPorClassificacao() {
       <div>
         {filmesPorClassificacao.map((item) => (
           <div key={item._id}>
-            {item.nome}
+            {item.title} ({item.year}) - {item.genre} -{' '}
+            {item.watched ? 'Visto' : 'Por ver'} - Classificação: {item.rating} - Adicionado em:{' '}
+            {new Date(item.createdAt).toLocaleDateString()}
           </div>
         ))}
       </div>

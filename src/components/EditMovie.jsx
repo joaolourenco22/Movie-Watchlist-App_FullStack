@@ -8,7 +8,6 @@ export default function EditarFilme({ isOpen, onClose, onSuccess, filme }) {
         genre: '',
         watched: false,
         rating: 0,
-        createdAt: new Date(),
     })
 
     useEffect(() => {
@@ -19,7 +18,6 @@ export default function EditarFilme({ isOpen, onClose, onSuccess, filme }) {
                 genre: filme.genre || '',
                 watched: filme.watched || false,
                 rating: filme.rating || 0,
-                createdAt: filme.createdAt || new Date(),
             })
         }
     }, [filme])
@@ -45,19 +43,19 @@ export default function EditarFilme({ isOpen, onClose, onSuccess, filme }) {
     }
 
     function handleClose() {
-        setFormData({ title: '', year: '', genre: '', watched: false, rating: 0, createdAt: new Date() })
+        setFormData({ title: '', year: '', genre: '', watched: false, rating: 0 })
         onClose()
     }
 
     if (!isOpen || !filme) return null
 
     return (
-        <div className="fixed inset-0 bg-white bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4 max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-200">
+        <div >
+            <div >
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-bold text-gray-900">✏️ Editar Filme</h2>
                     <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 text-2xl">
-                        ✕
+                        BLABLABLA
                     </button>
                 </div>
 
@@ -95,13 +93,6 @@ export default function EditarFilme({ isOpen, onClose, onSuccess, filme }) {
                             Avaliação (0 a 10)
                         </label>
                         <input type="number" id="rating" name="rating" value={formData.rating} onChange={handleChange} min="0" max="10" required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 8" />
-                    </div>
-
-                    <div>
-                        <label htmlFor="createdAt" className="block text-sm font-medium text-gray-700 mb-2">
-                            Data de Criação
-                        </label>
-                        <input type="date" id="createdAt" name="createdAt" value={formData.createdAt.toISOString().split('T')[0]} onChange={handleChange} required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
 
                     <div className="flex space-x-3 pt-4">
