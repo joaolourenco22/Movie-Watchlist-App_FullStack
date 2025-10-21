@@ -53,10 +53,8 @@ export default function EditarFilme({ isOpen, onClose, onSuccess, filme }) {
         <div >
             <div >
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-2xl font-bold text-gray-900">✏️ Editar Filme</h2>
-                    <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 text-2xl">
-                        BLABLABLA
-                    </button>
+                    <h2 className="text-2xl font-bold text-gray-900">Editar Filme</h2>
+                    <button onClick={handleClose} className="text-gray-400 hover:text-gray-600 text-2xl">✕</button>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">

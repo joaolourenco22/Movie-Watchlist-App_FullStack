@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { adicionarFilmeAPI } from '../services/api';
 
-export default function AdicionarFilme() {
+export default function AdicionarFilme({ onSuccess, onClose }) {
   const [nome, setNome] = useState('');
   const [ano, setAno] = useState('');
   const [genero, setGenero] = useState('');
@@ -21,11 +21,16 @@ export default function AdicionarFilme() {
 
     try {
       await adicionarFilmeAPI(novoFilme);
+
       setNome('');
       setAno('');
       setGenero('');
       setAssistido(false);
       setRating(0);
+
+      if (onSuccess) onSuccess();
+      if (onClose) onClose();
+
     } catch (error) {
       console.error('Erro ao adicionar filme:', error);
     }
@@ -33,8 +38,6 @@ export default function AdicionarFilme() {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 min-w-72 h-fit">
-      <h2 className="text-lg font-semibold mb-3">Adicionar Filme</h2>
-
       <form onSubmit={adicionarFilme} className="flex flex-col gap-3 mt-6">
         <label>
           Nome do filme
