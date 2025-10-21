@@ -49,7 +49,7 @@ export default function CarregarFilmes() {
             <div className="flex flex-col text-left">
               <p className="font-bold text-xl mb-2">{item.title}</p>
               <p className="text-sm"><span className='font-bold'>Ano:</span> {item.year}</p>
-              <p className="text-sm"><span className='font-bold'>Gênero:</span> {item.genre}</p>
+              <p className="text-sm"><span className='font-bold'>Género:</span> {item.genre}</p>
               <p className="text-sm"><span className='font-bold'>Status:</span> {item.watched ? 'Visto' : 'Por ver'}</p>
               <p className="text-sm"><span className='font-bold'>Classificação:</span> {item.rating}</p>
               <p className="text-xs text-gray-700">

@@ -92,7 +92,7 @@ app.put('/api/movies/:id', async (req, res) => {
       { new: true, runValidators: true }  // Retorna documento atualizado e executa validações
     );
 
-    if (!movie) return res.status(404).json({ erro: 'Filme não encontrado' });
+    if (!movie) return res.status(404).json({ erro: 'Filme não editado' });
     res.json(movie);
   } catch (error) {
     console.error('Erro ao atualizar filme:', error);
@@ -105,7 +105,7 @@ app.delete('/api/movies/:id', async (req, res) => {
   try {
     const movie = await Movie.findByIdAndDelete(req.params.id);
 
-    if (!movie) return res.status(404).json({ erro: 'Filme não encontrado' });
+    if (!movie) return res.status(404).json({ erro: 'Filme não apagado' });
     res.json({ mensagem: 'Filme eliminado com sucesso' });
   } catch (error) {
     console.error('Erro ao eliminar produto:', error);
